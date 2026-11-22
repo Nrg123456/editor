@@ -1,0 +1,124 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>Edit website</title><style>:root{--bg:#F3F6F9;--ink:#0F1B2A;--mute:#53647A;--ac:#0A7E96;--ac2:#22B8D6;--card:#fff;--line:#D5DEE8;--soft:#E6EDF4;--onac:#fff;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B1522;--ink:#E7EEF6;--mute:#93A5BA;--ac:#3FC9E4;--ac2:#3FC9E4;--card:#111F31;--line:#233650;--soft:#162840;--onac:#06202A;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0B1522;--ink:#E7EEF6;--mute:#93A5BA;--ac:#3FC9E4;--ac2:#3FC9E4;--card:#111F31;--line:#233650;--soft:#162840;--onac:#06202A;color-scheme:dark}
+html{scroll-padding-top:70px}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "Source Sans 3",system-ui,sans-serif}
+h1,h2,h3{font-family:Sora,system-ui,sans-serif;line-height:1.12;margin:0 0 12px;letter-spacing:-.02em}
+.w{max-width:1080px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+header.top .w{display:flex;align-items:center;gap:12px;min-height:58px}
+.logo{font:800 18px Sora;color:var(--ink);text-decoration:none;margin-right:auto}
+nav{display:flex;gap:2px;flex-wrap:wrap}nav a{color:var(--mute);text-decoration:none;padding:6px 10px;border-radius:8px;font-weight:600;font-size:15px}
+nav a:hover,nav a.on{color:var(--ink);background:var(--soft)}
+button,.btn{font:600 15px "Source Sans 3",sans-serif;cursor:pointer;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:10px 16px;text-decoration:none;display:inline-block}
+.btn.p{background:var(--ac);border-color:var(--ac);color:var(--onac)}
+.btn.d{color:#C0392B;border-color:#C0392B}
+#menu{display:none}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--ac2);outline-offset:2px}
+main{min-height:70vh;padding:36px 0 60px}
+.hero{display:grid;grid-template-columns:1.15fr 1fr;gap:36px;align-items:center;padding:24px 0}
+.hero h1{font-size:clamp(38px,6vw,64px);font-weight:800}
+.lede{font-size:19px;color:var(--mute);max-width:52ch}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+.photo{width:100%;max-width:420px;aspect-ratio:1;object-fit:cover;border-radius:18px;border:1px solid var(--line);justify-self:center}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.card .th{aspect-ratio:16/10;background:#fff;display:grid;place-items:center;overflow:hidden}.card .th img{width:100%;height:100%;object-fit:contain}
+.card .th.ph{background:linear-gradient(135deg,var(--soft),var(--card));font:800 40px Sora;color:var(--ac)}
+.card .b{padding:16px;display:flex;flex-direction:column;gap:8px;flex:1}.card h3{font-size:19px;margin:0}
+.card p{margin:0;color:var(--mute);font-size:15px}.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:13px;font-weight:600;padding:2px 10px;border-radius:99px;background:var(--soft);color:var(--ink)}
+.st{font-size:13px;font-weight:700;padding:2px 10px;border-radius:99px;border:1px solid var(--ac);color:var(--ac);width:max-content}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 24px}
+input,select,textarea{font:inherit;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);width:100%}
+.tools input{flex:1;min-width:200px;width:auto}.tools select{width:auto}
+.sec{margin:0 0 28px}.sec h3{font-size:21px}.sec p{margin:0}
+.shot{background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px;margin:0 0 14px}.shot img{width:100%;display:block}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.two{display:grid;grid-template-columns:1.4fr 1fr;gap:30px}.eq{grid-template-columns:1fr 1fr}
+.empty{border:1px dashed var(--line);border-radius:14px;padding:22px;color:var(--mute)}
+.bar{height:8px;border-radius:9px;background:var(--soft);overflow:hidden;margin-top:6px}.bar i{display:block;height:100%;background:var(--ac2)}
+.sk{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+form,.form{display:grid;gap:12px}label{font-weight:600;font-size:15px;display:grid;gap:4px}
+.pv{display:flex;gap:8px;flex-wrap:wrap}.pv img{height:60px;border-radius:6px;border:1px solid var(--line)}
+.li{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 22px}.tabs button.on{background:var(--ac);color:var(--onac);border-color:var(--ac)}
+#toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:10px;font-weight:600;display:none;z-index:9;max-width:90vw}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--mute);font-size:14px}
+.back{color:var(--ac);font-weight:600;text-decoration:none}
+@media(max-width:780px){.hero,.two{grid-template-columns:1fr}.photo{max-width:300px}#menu{display:inline-block}nav{display:none;position:absolute;top:58px;left:0;right:0;background:var(--bg);padding:10px 20px;border-bottom:1px solid var(--line);flex-direction:column}nav.open{display:flex}}
+
+.hint{color:var(--mute);font-size:15px}
+</style></head><body>
+<header class="top"><div class="w"><span class="logo">Website editor</span></div></header><main class="w" id="app"></main><div id="toast" role="status"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script><script>
+let D,BASE="";const NF={},PV={};
+const CATS=["Mechanical Engineering", "Product Design and Development", "CAD and 3D Modelling", "Robotics and Mechatronics", "Industrial Automation", "AI and Machine Learning", "Software Development", "Renewable Energy", "Thermal Engineering", "Manufacturing", "Aerospace Engineering", "Research and Publications", "Electronics and Embedded Systems", "Experimental Projects", "Business and Innovation", "Other Projects"],STATUS=["Idea", "Research", "Designing", "Development", "Prototyping", "Testing", "Completed", "On Hold"],SECT=[["overview", "Project Overview"], ["problem", "Problem Statement"], ["objectives", "Objectives"], ["solution", "Proposed Solution"], ["concept", "Concept Development"], ["method", "Design and Methodology"], ["specs", "Technical Specifications"], ["materials", "Materials and Components"], ["tools", "Software and Tools"], ["working", "Working Principle"], ["process", "Development Process"], ["testing", "Experiments and Testing"], ["results", "Results and Performance"], ["challenges", "Challenges and Solutions"], ["outcome", "Final Outcome"], ["future", "Future Scope"]];
+const $=s=>document.querySelector(s),app=$("#app"),uid=()=>"x"+Math.random().toString(36).slice(2,8);
+const E=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const L=s=>String(s||"").split(",").map(x=>x.trim()).filter(Boolean);
+const gp=(o,k)=>k.split(".").reduce((a,x)=>a&&a[x],o),sp=(o,k,v)=>{const a=k.split(".");a.slice(0,-1).forEach(x=>o=o[x]=o[x]||{});o[a[a.length-1]]=v};
+const src=p=>PV[p]||(/^(https?:|blob:|data:)/.test(p)?p:BASE+p);
+const FORMS={
+me:{label:"Profile and contact",single:1,fields:[["name","Name"],["email","Email"],["photo","Profile photo","img"],["resume","Resume PDF","pdf"],["phone","Phone for links (+91…)"],["phoneShow","Phone as shown"],["loc","Location"],["linkedin","LinkedIn URL"],["github","GitHub URL"],["youtube","YouTube URL"],["education","Education","ta"],["interests","Interests (comma separated)","ta"]]},
+projects:{label:"Projects",title:"title",fields:[["title","Title"],["cat","Categories (select all that fit)","msel:CATS"],["status","Status","sel:STATUS"],["duration","Duration"],["role","My contribution"],["short","Short description","ta"],["tech","Technologies (comma separated)"],["tools","Tools and software (comma separated)"],["thumb","Thumbnail image","img"],["gallery","Gallery images","imgs"]].concat(SECT.map(s=>["s."+s[0],s[1]+" (optional)","ta"]))},
+papers:{label:"Research",title:"title",fields:[["title","Paper title"],["authors","Authors"],["status","Status"],["cat","Category"],["venue","Journal or conference"],["date","Publication date"],["doi","DOI"],["link","Publication link"],["abstract","Abstract","ta"],["kw","Keywords (comma separated)"]]},
+skills:{label:"Skills",title:"n",fields:[["g","Group"],["n","Skill"],["l","Level label (e.g. Beginner)"],["p","Level bar, 0 to 100"]]},
+exp:{label:"Experience",title:"t",fields:[["g","Group (e.g. Internships)"],["t","Title"],["o","Organization"],["d","Date"],["note","Details","ta"]]},
+certs:{label:"Certifications",title:"title",fields:[["title","Course"],["org","Issuer"],["date","Date"],["score","Score"],["roll","Roll number"],["note","Notes","ta"],["file","Certificate PDF","pdf"]]}};
+
+FORMS.me.fields=FORMS.me.fields.filter(f=>!["photo","resume"].includes(f[0]));
+FORMS.files={label:"Photo and resume",single:1,fields:[["photo","Profile photo","img"],["resume","Resume PDF","pdf"]]};
+let A={tab:"dash",i:null,W:null},dirty=false;
+function fld(f,W){const [k,l,t]=f,v=gp(W,k);
+if(t==="ta")return `<label>${l}<textarea data-k="${k}" rows="4">${E(v)}</textarea></label>`;
+if(t==="msel:CATS")return `<label>${l}<select multiple size="6" data-k="${k}">${CATS.map(o=>`<option ${L(v).includes(o)?"selected":""}>${o}</option>`).join("")}</select></label>`;
+if(t&&t.startsWith("sel:"))return `<label>${l}<select data-k="${k}">${(t==="sel:CATS"?CATS:STATUS).map(o=>`<option ${o===v?"selected":""}>${o}</option>`).join("")}</select></label>`;
+if(t==="img")return `<label>${l}<input type="file" accept="image/*" data-f="${k}"></label><div class="pv">${v?`<img src="${src(v)}" alt="">`:""}</div>`;
+if(t==="imgs")return `<label>${l} (add several)<input type="file" accept="image/*" multiple data-f="${k}"></label><div class="pv">${(v||[]).map((x,i)=>`<span><img src="${src(x)}" alt=""><br><button data-act="rm" data-k="${k}" data-n="${i}">Remove</button></span>`).join("")}</div>`;
+if(t==="pdf")return `<label>${l}<input type="file" accept="application/pdf" data-f="${k}"></label><div class="hint">${v?"Current file: "+E(v):"No file yet."}</div>`;
+return `<label>${l}<input data-k="${k}" value="${E(v)}"></label>`}
+const GH={get:()=>{try{return JSON.parse(localStorage.getItem("gh")||"{}")}catch(e){return{}}},set:o=>localStorage.setItem("gh",JSON.stringify(o))};
+const setMsg=t=>{const m=$("#msg");if(m)m.textContent=t};
+function dashHtml(){const lp=localStorage.getItem("lastpub");return `<div class="cards" style="margin-bottom:22px">${[["Projects",D.projects.length],["Research",D.papers.length],["Skills",D.skills.length],["Certificates",D.certs.length]].map(x=>`<div class="sk"><div style="color:var(--mute);font-size:14px">${x[0]}</div><div style="font:800 30px Sora">${x[1]}</div></div>`).join("")}</div><h3>Project status (quick change)</h3>${D.projects.map((p,i)=>`<div class="li"><span>${E(p.title)}</span><select data-st="${i}" style="width:auto">${STATUS.map(s=>`<option ${s===p.status?"selected":""}>${s}</option>`).join("")}</select></div>`).join("")}<p class="hint" style="margin-top:18px">${lp?"Last published from this device: "+E(lp):"Not published from this device yet."} After editing, press <b>Publish to website</b> at the top. Your site updates in 1 to 2 minutes.</p>`}
+function settingsHtml(){const g=GH.get();return `<div class="form"><p class="hint">One-time setup so the Publish button can save to your GitHub. Your token stays only in this browser.</p><label>GitHub username<input id="g-o" value="${E(g.owner)}"></label><label>Repository name<input id="g-r" value="${E(g.repo)}"></label><label>Branch<input id="g-b" value="${E(g.branch||"main")}"></label><label>Access token<input id="g-t" type="password" value="${E(g.token)}" autocomplete="off"></label><div class="row"><button class="btn p" data-act="ghsave">Save settings</button><button data-act="ghtest">Test connection</button></div><div id="g-m" class="hint"></div><h3>How to get the token (once)</h3><p class="hint">1. On github.com open your profile picture, then Settings, then Developer settings, then Personal access tokens, then Fine-grained tokens, then Generate new token.<br>2. Name it Portfolio. Set Expiration to 1 year.<br>3. Under Repository access choose Only select repositories and pick your website repository.<br>4. Under Permissions, Repository permissions, set Contents to Read and write.<br>5. Click Generate token, copy it and paste it above.</p></div>`}
+function render(){const F=FORMS[A.tab],tabs=[["dash","Dashboard"]].concat(Object.entries(FORMS).map(([k,f])=>[k,f.label]),[["settings","Settings"]]).map(([k,l])=>`<button class="${A.tab===k?"on":""}" data-act="tab" data-k="${k}">${l}</button>`).join("");let body;
+if(A.tab==="dash")body=dashHtml();else if(A.tab==="settings")body=settingsHtml();
+else if(F.single||A.W)body=`<div class="form">${F.fields.map(f=>fld(f,A.W)).join("")}<div class="row"><button class="btn p" data-act="save">Save changes</button>${F.single?"":`<button data-act="cancel">Cancel</button>`}</div></div>`;
+else{const arr=D[A.tab];body=`<div class="row"><button class="btn p" data-act="new">Add new</button></div>${arr.map((x,i)=>`<div class="li"><span>${E(x[F.title])}</span><span><button data-act="edit" data-n="${i}">Edit</button> <button class="btn d" data-act="del" data-n="${i}">Delete</button></span></div>`).join("")||'<div class="empty">Nothing here yet.</div>'}`}
+app.innerHTML=`<h1>Your website dashboard</h1><div class="row"><button class="btn p" id="pub">Publish to website${dirty?" (unpublished changes)":""}</button><button id="exp">Download files (backup)</button><a class="btn" href="${E(BASE)}" target="_blank" rel="noopener">View website</a></div><div id="msg" class="hint"></div><div class="tabs">${tabs}</div>${body}`;
+$("#exp").onclick=exportZip;$("#pub").onclick=publish}
+const b64=ab=>{let s="";const u=new Uint8Array(ab);for(let i=0;i<u.length;i+=8192)s+=String.fromCharCode.apply(null,u.subarray(i,i+8192));return btoa(s)};
+const gh=(path,o)=>{const g=GH.get();o=o||{};return fetch("https://api.github.com/repos/"+g.owner+"/"+g.repo+path,{method:o.method||"GET",headers:{Authorization:"Bearer "+g.token,Accept:"application/vnd.github+json"},body:o.body?JSON.stringify(o.body):undefined})};
+async function putFile(path,c64,msg){const g=GH.get(),br=g.branch||"main";let sha;const r=await gh("/contents/"+path+"?ref="+br);
+if(r.status===200)sha=(await r.json()).sha;else if(r.status===401)throw new Error("The token is wrong or expired. Check the Settings tab.");else if(r.status===403)throw new Error("The token has no permission. In the token set Contents to Read and write.");else if(r.status!==404)throw new Error("GitHub error "+r.status);
+const p=await gh("/contents/"+path,{method:"PUT",body:Object.assign({message:msg,content:c64,branch:br},sha?{sha:sha}:{})});
+if(!p.ok)throw new Error("Could not save "+path+" (code "+p.status+")")}
+async function publish(){const g=GH.get();if(!g.token||!g.owner||!g.repo){A={tab:"settings",i:null,W:null};render();setMsg("Please fill in Settings first (one time).");return}
+const pb=$("#pub");pb.disabled=true;try{setMsg("Publishing, please wait...");await putFile("content.js",b64(new TextEncoder().encode("window.SITE = "+JSON.stringify(D,null,1)+";\n")),"Update website content");
+for(const n of Object.keys(NF)){setMsg("Uploading "+n+"...");await putFile(n,b64(await NF[n].arrayBuffer()),"Add "+n);delete NF[n]}
+dirty=false;localStorage.setItem("lastpub",new Date().toLocaleString());render();setMsg("Published. Your website updates in 1 to 2 minutes, then refresh it.")}catch(e){pb.disabled=false;setMsg("Could not publish: "+e.message)}}
+function collect(){document.querySelectorAll("#app [data-k]").forEach(e=>{if(e.dataset.act)return;const v=e.multiple?[...e.selectedOptions].map(o=>o.value).join(", "):e.value;if(A.tab==="skills"&&e.dataset.k==="p")sp(A.W,"p",Math.max(0,Math.min(100,+v||0)));else sp(A.W,e.dataset.k,v)})}
+const shrink=f=>new Promise(r=>{const im=new Image();im.onload=()=>{const s=Math.min(1,1200/im.width),c=document.createElement("canvas");c.width=im.width*s;c.height=im.height*s;const g=c.getContext("2d");g.fillStyle="#fff";g.fillRect(0,0,c.width,c.height);g.drawImage(im,0,0,c.width,c.height);c.toBlob(b=>r(b),"image/jpeg",.85)};im.src=URL.createObjectURL(f)});
+async function addImg(f){const b=await shrink(f),n="img-"+uid()+".jpg";NF[n]=b;PV[n]=URL.createObjectURL(b);return n}
+function addPdf(f){const n="doc-"+uid()+".pdf";NF[n]=f;return n}
+function commit(){const F=FORMS[A.tab];if(A.tab==="me"||A.tab==="files"){Object.keys(A.W).forEach(k=>D[k==="photo"||k==="resume"?k:"me"]!==undefined&&(k==="photo"||k==="resume"?D[k]=A.W[k]:D.me[k]=A.W[k]))}else if(A.i===-1)D[A.tab].push(A.W);else D[A.tab][A.i]=A.W;dirty=true}
+app.addEventListener("click",e=>{const b=e.target.closest("button");if(!b||!b.dataset.act)return;const a=b.dataset.act;
+if(a==="tab"){A={tab:b.dataset.k,i:null,W:FORMS[b.dataset.k]&&FORMS[b.dataset.k].single?JSON.parse(JSON.stringify(b.dataset.k==="files"?{photo:D.photo,resume:D.resume}:D.me)):null};render()}
+else if(a==="ghsave"||a==="ghtest"){const o={owner:$("#g-o").value.trim(),repo:$("#g-r").value.trim(),branch:$("#g-b").value.trim()||"main",token:$("#g-t").value.trim()};GH.set(o);const m=$("#g-m");
+if(a==="ghsave")m.textContent="Saved in this browser.";else{m.textContent="Testing...";gh("").then(async r=>{const j=await r.json();m.textContent=r.status===200?(j.permissions&&j.permissions.push?"Connected. You can publish.":"Connected, but the token cannot write. Set Contents to Read and write."):r.status===404?"Repository not found. Check the username and repository name.":r.status===401?"The token is wrong or expired.":"GitHub error "+r.status}).catch(()=>m.textContent="Could not reach GitHub. Check your internet.")}}
+else if(a==="new"){A.i=-1;A.W=A.tab==="projects"?{id:"p-"+uid(),status:"Idea",cat:CATS[0],tech:"",tools:"",gallery:[],s:{}}:A.tab==="papers"?{id:"r-"+uid()}:{id:uid()};render()}
+else if(a==="edit"){A.i=+b.dataset.n;A.W=JSON.parse(JSON.stringify(D[A.tab][A.i]));render()}
+else if(a==="cancel"){A.i=null;A.W=null;render()}
+else if(a==="rm"){collect();gp(A.W,b.dataset.k).splice(+b.dataset.n,1);render()}
+else if(a==="del"){if(!confirm("Delete this item?"))return;D[A.tab].splice(+b.dataset.n,1);dirty=true;render()}
+else if(a==="save"){collect();commit();if(!FORMS[A.tab].single){A.i=null;A.W=null}render();const t=$("#toast");t.textContent="Saved. Now press Publish to website.";t.style.display="block";setTimeout(()=>t.style.display="none",3500)}});
+app.addEventListener("change",async e=>{const i=e.target;if(i.dataset.st!==undefined){D.projects[+i.dataset.st].status=i.value;dirty=true;render();return}if(!i.dataset.f||!i.files.length)return;const k=i.dataset.f;collect();const t=(FORMS[A.tab].fields.find(f=>f[0]===k)||[])[2];
+if(t==="pdf")sp(A.W,k,addPdf(i.files[0]));else if(t==="img")sp(A.W,k,await addImg(i.files[0]));else{const c=gp(A.W,k)||[];for(const f of i.files)c.push(await addImg(f));sp(A.W,k,c)}render()});
+async function exportZip(){if(!window.JSZip){alert("Could not load the zip tool. Check your internet and reload this page.");return}const z=new JSZip();z.file("content.js","window.SITE = "+JSON.stringify(D,null,1)+";\n");for(const[n,b]of Object.entries(NF))z.file(n,b);const blob=await z.generateAsync({type:"blob"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="website-update.zip";a.click();dirty=false;render()}
+addEventListener("beforeunload",e=>{if(dirty){e.preventDefault();e.returnValue=""}});
+const saved=(()=>{try{return localStorage.getItem("siteurl")||""}catch(e){return ""}})();
+function loader(msg){app.innerHTML=`<h1>Edit your website</h1><p class="lede" style="font-size:16px">${msg||"Type your website address, for example https://yourname.github.io/ , then press Open editor."}</p><div class="form"><input id="su" value="${E(saved)}" placeholder="https://..." aria-label="Website address"><button class="btn p" id="go">Open editor</button></div>`;$("#go").onclick=load}
+function load(){let u=$("#su").value.trim();if(!u)return;if(!u.endsWith("/"))u+="/";BASE=u;try{localStorage.setItem("siteurl",u)}catch(e){}const s=document.createElement("script");s.src=u+"content.js?v="+Date.now();s.onload=()=>{D=window.SITE;render()};s.onerror=()=>loader("Could not open that address. Check it and try again.");document.head.appendChild(s)}
+loader();if(saved)load();
+</script></body></html>
